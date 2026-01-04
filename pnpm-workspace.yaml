@@ -1,0 +1,55 @@
+packages: []
+
+catalogs:
+
+  build:
+    '@shikijs/markdown-it': ^3.2.1
+    '@unocss/eslint-config': ^66.1.0-beta.7
+    '@vitejs/plugin-react': ^5.1.2
+    beasties: ^0.2.0
+    markdown-it-link-attributes: ^4.0.1
+    rollup: ^4.37.0
+    shiki: ^3.2.1
+    unocss: ^66.1.0-beta.7
+    unplugin: ^2.2.2
+    vite: ^6.2.3
+    vite-bundle-visualizer: ^1.2.1
+    vite-plugin-inspect: ^11.0.0
+    vite-plugin-pwa: ^0.21.2
+    vite-ssg: ^26.0.0
+    vite-ssg-sitemap: ^0.8.1
+
+  dev:
+    '@antfu/eslint-config': ^4.11.0
+    '@iconify-json/carbon': ^1.2.8
+    cypress: ^14.2.1
+    cypress-vite: ^1.6.0
+    eslint: ^9.23.0
+    eslint-plugin-cypress: ^4.2.0
+    eslint-plugin-format: ^1.0.1
+    https-localhost: ^4.7.1
+    lint-staged: ^15.5.0
+    simple-git-hooks: ^2.12.1
+    taze: ^19.0.2
+    typescript: ^5.8.2
+    vitest: ^3.0.9
+
+  frontend:
+    '@unhead/react': ^2.1.1
+    '@unocss/reset': ^66.1.0-beta.7
+    i18next: ^25.7.3
+    nprogress: ^0.2.0
+    react: ^19.2.3
+    react-dom: ^19.2.3
+    react-i18next: ^16.5.1
+
+  types:
+    '@types/markdown-it-link-attributes': ^3.0.5
+    '@types/nprogress': ^0.2.3
+    '@types/react': ^19.2.7
+    '@types/react-dom': ^19.2.3
+
+onlyBuiltDependencies:
+  - cypress
+  - esbuild
+  - simple-git-hooks
