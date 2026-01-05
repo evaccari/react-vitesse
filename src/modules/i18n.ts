@@ -6,14 +6,7 @@ i18n.use(initReactI18next).init({
   interpolation: {
     escapeValue: false,
   },
-  lng: '',
-  react: {
-    useSuspense: true,
-  },
-  supportedLngs: () => {
-    const keys = Object.keys(import.meta.glob('../../languages/*.yml'))
-    console.log(keys)
-  },
+  supportedLngs: Object.keys(import.meta.glob('../languages/*.yml')).map((path) => (path.match(/([\w-]*)\.yml$/)?.[1])!)
 })
 
 export default i18n

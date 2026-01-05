@@ -1,4 +1,5 @@
 import { useHead } from '@unhead/react'
+import { Outlet } from 'react-router-dom'
 
 export default function App() {
   useHead({
@@ -22,5 +23,5 @@ export default function App() {
     ],
   })
 
-  return <div>App Component</div>
+  return <Outlet />
 }
