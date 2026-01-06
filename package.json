@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.7.0",
+  "packageManager": "pnpm@10.27.0",
   "scripts": {
     "build": "vite-ssg build",
     "dev": "vite --port 3333 --open",
@@ -24,7 +24,8 @@
     "react": "catalog:frontend",
     "react-dom": "catalog:frontend",
     "react-i18next": "catalog:frontend",
-    "react-router-dom": "catalog:frontend"
+    "react-router-dom": "catalog:frontend",
+    "zustand": "catalog:frontend"
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
@@ -36,6 +37,7 @@
     "@types/react": "catalog:types",
     "@types/react-dom": "catalog:types",
     "@unocss/eslint-config": "catalog:build",
+    "@unocss/preset-web-fonts": "catalog:build",
     "@vitejs/plugin-react": "catalog:build",
     "beasties": "catalog:build",
     "cypress": "catalog:dev",
@@ -61,11 +63,6 @@
     "vite-ssg": "catalog:build",
     "vite-ssg-sitemap": "catalog:build",
     "vitest": "catalog:dev"
-  },
-  "resolutions": {
-    "unplugin": "catalog:build",
-    "vite": "catalog:build",
-    "vite-plugin-inspect": "catalog:build"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
