@@ -1,5 +1,6 @@
 import { useHead } from '@unhead/react'
 import { Outlet } from 'react-router-dom'
+import RouteProgress from '~/components/RouteProgress'
 
 export default function App() {
   useHead({
@@ -23,5 +24,10 @@ export default function App() {
     ],
   })
 
-  return <Outlet />
+  return (
+    <>
+      <RouteProgress />
+      <Outlet />
+    </>
+  )
 }

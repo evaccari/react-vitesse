@@ -11,13 +11,13 @@ export default function NotFoundLayout() {
   })
 
   return (
-    <main className='p-x4 p-y10 text-center text-teal-700 dark:text-gray-200'>
-      <div className='text-4xl'>
-        <div className='i-carbon-warning inline-block' />
+    <main className="p-x4 p-y10 text-center text-teal-700 dark:text-gray-200">
+      <div className="text-4xl">
+        <div className="i-carbon-warning inline-block" />
       </div>
       <Outlet />
       <div>
-        <button className='text-sm btn m-3 m-t8' onClick={() => navigate(-1)}>
+        <button className="m-3 m-t8 btn text-sm" onClick={() => navigate(-1)}>
           {t('button.back')}
         </button>
       </div>

@@ -1,34 +1,40 @@
-import { acceptHMRUpdate, defineStore } from 'pinia'
+import { create } from 'zustand'
+import { devtools } from 'zustand/middleware'
 
-export const useUserStore = defineStore('user', () => {
-  /**
-   * Current name of the user.
-   */
-  const savedName = ref('')
-  const previousNames = ref(new Set<string>())
+interface UserStore {
+  savedName: string
+  previousNames: Set<string>
 
-  const usedNames = computed(() => Array.from(previousNames.value))
-  const otherNames = computed(() => usedNames.value.filter(name => name !== savedName.value))
+  otherNames: () => string[]
+  setNewName: (name: string) => void
+}
 
-  /**
-   * Changes the current name of the user and saves the one that was used
-   * before.
-   *
-   * @param name - new name to set
-   */
-  function setNewName(name: string) {
-    if (savedName.value)
-      previousNames.value.add(savedName.value)
+export const useUserStore = create<UserStore>()(
+  devtools((set, get) => ({
+    savedName: '',
+    previousNames: new Set<string>(),
 
-    savedName.value = name
-  }
+    otherNames: () => Array.from(get().previousNames).filter(name => name !== get().savedName),
 
-  return {
-    setNewName,
-    otherNames,
-    savedName,
-  }
-})
+    setNewName(name: string) {
+      const { previousNames, savedName } = get()
 
-if (import.meta.hot)
-  import.meta.hot.accept(acceptHMRUpdate(useUserStore as any, import.meta.hot))
+      if (savedName === name)
+        return
+
+      const newPreviousNames = new Set(previousNames)
+
+      if (savedName) {
+        newPreviousNames.add(savedName)
+      }
+
+      set({
+        savedName: name,
+        previousNames: newPreviousNames,
+      })
+    },
+  }), {
+    name: 'UserStore',
+    serialize: { options: true },
+  }),
+)

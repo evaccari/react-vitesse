@@ -6,7 +6,9 @@ i18n.use(initReactI18next).init({
   interpolation: {
     escapeValue: false,
   },
-  supportedLngs: Object.keys(import.meta.glob('../languages/*.yml')).map((path) => (path.match(/([\w-]*)\.yml$/)?.[1])!)
+  lng: 'en',
+  // eslint-disable-next-line ts/no-non-null-asserted-optional-chain
+  supportedLngs: Object.keys(import.meta.glob('../languages/*.yml')).map(path => (path.match(/([\w-]*)\.yml$/)?.[1])!),
 })
 
 export default i18n
