@@ -1,19 +1,19 @@
 {
   "cSpell.words": [
     "antfu",
+    "Attributify",
     "demi",
     "iconify",
-    "intlify",
     "Lngs",
-    "pinia",
     "pnpm",
+    "unhead",
     "unocss",
     "unplugin",
     "Vite",
     "vitejs",
     "Vitesse",
     "vitest",
-    "vueuse"
+    "zustand"
   ],
   "i18n-ally.sourceLanguage": "en",
   "i18n-ally.keystyle": "nested",
@@ -27,7 +27,6 @@
     "source.organizeImports": "never"
   },
   // Silent the stylistic rules in you IDE, but still auto fix them
-  "eslint.debug": true,
   "eslint.rules.customizations": [
     {
       "rule": "style/*",
@@ -78,7 +77,7 @@
     "javascript",
     "javascriptreact",
     "typescript",
-    //"typescriptreact",
+    "typescriptreact",
     "html",
     "markdown",
     "json",
