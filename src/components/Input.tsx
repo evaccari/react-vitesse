@@ -7,11 +7,11 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 export default function Input({ value, ...rest }: InputProps) {
   return (
     <input
+      {...rest}
       id="input"
       type="text"
-      value={value}
-      {...rest}
       className="w-[250px] border-gray-200 border-rounded bg-transparent px-4 py-2 text-center outline-none dark:border-gray-700 active:outline-none"
+      value={value}
     />
   )
 }
