@@ -5,7 +5,6 @@ interface UserStore {
   savedName: string
   previousNames: Set<string>
 
-  otherNames: () => string[]
   setNewName: (name: string) => void
 }
 
@@ -13,8 +12,6 @@ export const useUserStore = create<UserStore>()(
   devtools((set, get) => ({
     savedName: '',
     previousNames: new Set<string>(),
-
-    otherNames: () => Array.from(get().previousNames).filter(name => name !== get().savedName),
 
     setNewName(name: string) {
       const { previousNames, savedName } = get()

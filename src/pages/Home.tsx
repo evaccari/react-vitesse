@@ -1,4 +1,5 @@
 import { useHead } from '@unhead/react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import Input from '~/components/Input'
@@ -8,11 +9,11 @@ export default function HomePage() {
   const navigate = useNavigate()
   const { t } = useTranslation()
 
-  const { savedName, setNewName } = useUserStore()
+  const [name, setName] = useState(useUserStore.getState().savedName)
 
   function go() {
-    if (savedName)
-      navigate(`hi/${encodeURIComponent(savedName)}`)
+    if (name)
+      navigate(`hi/${encodeURIComponent(name)}`)
   }
 
   useHead({
@@ -36,11 +37,11 @@ export default function HomePage() {
       <div className="py-4" />
 
       <Input
-        value={savedName}
+        value={name}
         placeholder={t('intro.whats-your-name')}
         autoComplete="off"
         name="name"
-        onChange={e => setNewName(e.target.value)}
+        onChange={e => setName(e.target.value)}
         onKeyDown={(e) => {
           if (e.key === 'Enter')
             go()
@@ -51,7 +52,7 @@ export default function HomePage() {
       <div>
         <button
           className="m-3 btn text-sm"
-          disabled={!savedName}
+          disabled={!name}
           onClick={go}
         >
           {t('button.go')}

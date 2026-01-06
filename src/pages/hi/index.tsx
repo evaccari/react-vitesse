@@ -15,8 +15,10 @@ export default function HiPage() {
 
   const { setNewName } = useUserStore.getState()
 
-  const otherNames = useUserStore(s => s.otherNames())
+  const previousNames = useUserStore(s => s.previousNames)
   const savedName = useUserStore(s => s.savedName)
+
+  const otherNames = Array.from(previousNames).filter(name => name !== savedName).sort((a, b) => a.localeCompare(b))
 
   useEffect(() => {
     if (name && name !== savedName) {
