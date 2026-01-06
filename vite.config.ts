@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import Unocss from 'unocss/vite'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
-import generateSitemap from 'vite-ssg-sitemap'
+// import generateSitemap from 'vite-ssg-sitemap'
 import 'vitest/config'
 
 export default defineConfig({
@@ -25,8 +25,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'Vitesse',
-        short_name: 'Vitesse',
+        name: 'React Vitesse',
+        short_name: 'React Vitesse',
         theme_color: '#ffffff',
         icons: [
           {
@@ -51,13 +51,13 @@ export default defineConfig({
   ],
 
   // https://github.com/vitest-dev/vitest
-  test: {
-    include: ['test/**/*.test.ts'],
-    environment: 'jsdom',
-  },
+  // test: {
+  // include: ['test/**/*.test.ts'],
+  // environment: 'jsdom',
+  // },
 
   // https://github.com/antfu/vite-ssg
-  ssgOptions: {
+  /* ssgOptions: {
     script: 'async',
     formatting: 'minify',
     beastiesOptions: {
@@ -66,7 +66,7 @@ export default defineConfig({
     onFinished() {
       generateSitemap()
     },
-  },
+  }, */
 
   ssr: {
     // TODO: workaround until they support native ESM

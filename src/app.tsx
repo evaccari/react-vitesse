@@ -4,7 +4,7 @@ import RouteProgress from '~/components/RouteProgress'
 
 export default function App() {
   useHead({
-    title: 'Vitesse',
+    title: 'React Vitesse',
     meta: [
       {
         name: 'description',
