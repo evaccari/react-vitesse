@@ -8,7 +8,7 @@ button:
 intro:
   desc: Template awal vite
   dynamic-route: Contoh rute dinamik
-  hi: Halo, {name}!
+  hi: Halo, {{name}}!
   aka: Juga diketahui sebagai
   whats-your-name: Siapa nama anda?
 not-found: Tidak ditemukan

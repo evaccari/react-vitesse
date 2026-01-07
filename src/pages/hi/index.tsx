@@ -27,7 +27,7 @@ export default function HiPage() {
   }, [name, savedName, setNewName])
 
   useHead({
-    title: t('intro.hi', { name: savedName }),
+    title: t('intro.hi', { name }),
   })
 
   return (
@@ -37,7 +37,7 @@ export default function HiPage() {
       </div>
 
       <p>
-        {t('intro.hi', { name: savedName })}
+        {t('intro.hi', { name })}
       </p>
 
       <p className="text-sm opacity-75">

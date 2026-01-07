@@ -8,7 +8,7 @@ button:
 intro:
   desc: Exemple d'application Vite
   dynamic-route: Démo de route dynamique
-  hi: Salut, {name}!
+  hi: Salut, {{name}}!
   aka: Aussi connu sous le nom de
   whats-your-name: Comment t'appelles-tu ?
 not-found: Page non trouvée

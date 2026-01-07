@@ -8,6 +8,6 @@ button:
 intro:
   desc: Modello per una Applicazione Vite
   dynamic-route: Demo di rotta dinamica
-  hi: Ciao, {name}!
+  hi: Ciao, {{name}}!
   whats-your-name: Come ti chiami?
 not-found: Non trovato

@@ -8,7 +8,7 @@ button:
 intro:
   desc: Vite Startvorlage mit Vorlieben
   dynamic-route: Demo einer dynamischen Route
-  hi: Hi, {name}!
+  hi: Hi, {{name}}!
   aka: Auch bekannt als
   whats-your-name: Wie heißt du?
 not-found: Nicht gefunden
