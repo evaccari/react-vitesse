@@ -16,25 +16,26 @@ export default function Footer() {
   const { t } = useTranslation()
 
   return (
-    <nav className="mt-6 flex justify-center gap-4 text-xl">
-      <Link className="icon-btn" title={t('button.home')} to="/">
-        <div className="i-carbon-campsite" />
+    <nav flex="~ gap-4" justify="center" m="t-6" text="xl">
+
+      <Link icon="btn" to="/" title={t('button.home')}>
+        <div un-i="carbon-campsite" />
       </Link>
 
       <button className="icon-btn" title={t('button.toggle_dark')} onClick={toggleDark}>
-        <div className="i-carbon-sun dark:i-carbon-moon" />
+        <div un-i="carbon-sun dark:carbon-moon" />
       </button>
 
-      <a className="icon-btn" title={t('button.toggle_langs')} onClick={toggleLanguages}>
-        <div className="i-carbon-language" />
+      <a icon="btn" title={t('button.toggle_langs')} onClick={toggleLanguages}>
+        <div un-i="carbon-language" />
       </a>
 
-      <Link className="icon-btn" title={t('button.about')} to="/about" data-test-id="about">
-        <div className="i-carbon-dicom-overlay" />
+      <Link icon="btn" title={t('button.about')} to="/about" data-test-id="about">
+        <div un-i="carbon-dicom-overlay" />
       </Link>
 
-      <a className="icon-btn" rel="noreferrer" href="https://github.com/evaccari/react-vitesse" target="_blank" title="GitHub">
-        <div className="i-carbon-logo-github" />
+      <a icon="btn" rel="noreferrer" href="https://github.com/evaccari/react-vitesse" target="_blank" title="GitHub">
+        <div un-i="carbon-logo-github" />
       </a>
     </nav>
   )

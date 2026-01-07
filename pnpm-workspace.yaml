@@ -6,6 +6,7 @@ catalogs:
   build:
     '@shikijs/markdown-it': ^3.2.1
     '@unocss/eslint-config': ^66.5.12
+    '@unocss/preset-attributify': ^66.5.12
     '@unocss/preset-web-fonts': ^66.5.12
     '@vitejs/plugin-react': ^5.1.2
     beasties: ^0.2.0

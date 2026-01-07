@@ -15,8 +15,7 @@ export default function HiPage() {
 
   const { setNewName } = useUserStore.getState()
 
-  const previousNames = useUserStore(s => s.previousNames)
-  const savedName = useUserStore(s => s.savedName)
+  const { previousNames, savedName } = useUserStore.getState()
 
   const otherNames = Array.from(previousNames).filter(name => name !== savedName).sort((a, b) => a.localeCompare(b))
 
@@ -27,30 +26,29 @@ export default function HiPage() {
   }, [name, savedName, setNewName])
 
   useHead({
-    title: t('intro.hi', { name }),
+    title: t('intro.hi', { name: savedName }),
   })
 
   return (
     <div>
-      <div className="text-4xl">
-        <div className="i-carbon-pedestrian inline-block" />
+      <div text="4xl">
+        <div un-i="carbon-pedestrian" inline="block" />
       </div>
 
       <p>
-        {t('intro.hi', { name })}
+        {t('intro.hi', { name: savedName })}
       </p>
 
-      <p className="text-sm opacity-75">
+      <p text="sm" un-opacity="75">
         <em>{t('intro.dynamic-route')}</em>
       </p>
 
       {otherNames.length > 0 && (
-        <div className="mt-4 text-sm">
-          <span className="opacity-75">
+        <div m="t-4" text="sm">
+          <span un-opacity="75">
             {t('intro.aka')}
             :
           </span>
-
           <ul>
             {otherNames.map(otherName => (
               <li key={otherName}>
@@ -64,10 +62,7 @@ export default function HiPage() {
       )}
 
       <div>
-        <button
-          className="m-3 mt-6 btn text-sm"
-          onClick={() => navigate(-1)}
-        >
+        <button className="btn" m="3 t-6" text="sm" onClick={() => navigate(-1)}>
           {t('button.back')}
         </button>
       </div>

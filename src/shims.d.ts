@@ -1,3 +1,5 @@
+import type { AttributifyAttributes } from '@unocss/preset-attributify'
+
 declare interface Window {
   // extend the window
 }
@@ -15,4 +17,8 @@ declare module '*.vue' {
 
   const component: DefineComponent<object, object, any>
   export default component
+}
+
+declare module 'react' {
+  interface HTMLAttributes<T> extends AttributifyAttributes {}
 }

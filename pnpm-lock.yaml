@@ -12,6 +12,9 @@ catalogs:
     '@unocss/eslint-config':
       specifier: ^66.5.12
       version: 66.5.12
+    '@unocss/preset-attributify':
+      specifier: ^66.5.12
+      version: 66.5.12
     '@unocss/preset-web-fonts':
       specifier: ^66.5.12
       version: 66.5.12
@@ -222,6 +225,9 @@ importers:
       '@unocss/eslint-config':
         specifier: catalog:build
         version: 66.5.12(eslint@9.39.2(jiti@2.6.1))(typescript@5.8.2)
+      '@unocss/preset-attributify':
+        specifier: catalog:build
+        version: 66.5.12
       '@unocss/preset-web-fonts':
         specifier: catalog:build
         version: 66.5.12
