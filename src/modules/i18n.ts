@@ -1,14 +1,37 @@
 import i18n from 'i18next'
+import detector from 'i18next-browser-languagedetector'
+import backend from 'i18next-http-backend'
+import { load } from 'js-yaml'
 import { initReactI18next } from 'react-i18next'
 
-i18n.use(initReactI18next).init({
-  fallbackLng: 'en',
-  interpolation: {
-    escapeValue: false,
-  },
-  lng: 'en',
-  // eslint-disable-next-line ts/no-non-null-asserted-optional-chain
-  supportedLngs: Object.keys(import.meta.glob('../languages/*.yml')).map(path => (path.match(/([\w-]*)\.yml$/)?.[1])!),
-})
+const supportedLanguages = Object.keys(import.meta.glob('/locales/*.yml')).reduce((languages: string[], path) => {
+  const language = path.match(/([\w-]*)\.yml$/)?.[1]
+  if (language) {
+    languages.push(language)
+  }
 
-export default i18n
+  return languages
+}, [])
+
+i18n
+  .use(detector)
+  .use(backend)
+  .use(initReactI18next)
+  .init({
+    backend: {
+      loadPath: '/locales/{{lng}}.yml',
+      parse: (data: string) => {
+        return load(data)
+      },
+    },
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false,
+    },
+    lng: 'en',
+    supportedLngs: supportedLanguages,
+  })
+
+i18n.loadLanguages(['en'])
+
+export { i18n, supportedLanguages }
