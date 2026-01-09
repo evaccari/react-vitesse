@@ -3,9 +3,9 @@ import App from './app'
 import NotFoundLayout from './layouts/404'
 import DefaultLayout from './layouts/Default'
 import HomeLayout from './layouts/Home'
+import HomePage from './pages'
 import About from './pages/About'
-import HiPage from './pages/hi'
-import HomePage from './pages/Home'
+import HiPage from './pages/hi/[name]'
 
 export const router = createBrowserRouter([
   {
