@@ -1,4 +1,6 @@
 import path from 'node:path'
+import mdx from '@mdx-js/rollup'
+import rehypeShiki from '@shikijs/rehype'
 import react from '@vitejs/plugin-react'
 import Unocss from 'unocss/vite'
 import { defineConfig } from 'vite'
@@ -14,7 +16,24 @@ export default defineConfig({
   },
 
   plugins: [
-    react(),
+    {
+      enforce: 'pre',
+      ...mdx({
+        rehypePlugins: [
+          [
+            rehypeShiki,
+            {
+              themes: {
+                dark: 'vitesse-dark',
+                light: 'vitesse-light',
+              },
+            },
+          ],
+        ],
+      }),
+    },
+
+    react({ include: /\.(mdx|js|jsx|ts|tsx)$/ }),
 
     // https://github.com/antfu/unocss
     // see uno.config.ts for config

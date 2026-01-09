@@ -4,15 +4,12 @@ packages: []
 catalogs:
 
   build:
-    '@shikijs/markdown-it': ^3.2.1
+    '@mdx-js/rollup': ^3.1.1
     '@unocss/eslint-config': ^66.5.12
     '@unocss/preset-attributify': ^66.5.12
     '@unocss/preset-web-fonts': ^66.5.12
     '@vitejs/plugin-react': ^5.1.2
     beasties: ^0.2.0
-    markdown-it-link-attributes: ^4.0.1
-    rollup: ^4.37.0
-    shiki: ^3.2.1
     unocss: ^66.5.12
     vite: ^7.3.0
     vite-bundle-visualizer: ^1.2.1
@@ -41,6 +38,7 @@ catalogs:
     vitest: ^3.0.9
 
   frontend:
+    '@shikijs/rehype': ^1.25.0
     '@unhead/react': ^2.1.1
     '@unocss/reset': ^66.5.12
     i18next: ^25.7.3
@@ -55,7 +53,7 @@ catalogs:
 
   types:
     '@types/js-yaml': ^4.0.9
-    '@types/markdown-it-link-attributes': ^3.0.5
+    '@types/mdx': ^2.0.13
     '@types/nprogress': ^0.2.3
     '@types/react': ^19.2.7
     '@types/react-dom': ^19.2.3

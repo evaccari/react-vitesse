@@ -2,7 +2,6 @@ import { createHead, UnheadProvider } from '@unhead/react/client'
 import { StrictMode } from 'react'
 import { hydrateRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
-import App from './app'
 import { router } from './router'
 import '~/modules/i18n'
 import '@unocss/reset/tailwind.css'
@@ -19,7 +18,6 @@ if (element) {
     <StrictMode>
       <UnheadProvider head={head}>
         <RouterProvider router={router} />
-        <App />
       </UnheadProvider>
     </StrictMode>,
   )
