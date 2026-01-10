@@ -23,6 +23,7 @@ export default defineConfig({
           [
             rehypeShiki,
             {
+              defaultColor: false,
               themes: {
                 dark: 'vitesse-dark',
                 light: 'vitesse-light',

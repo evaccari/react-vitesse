@@ -9,6 +9,9 @@ catalogs:
     '@mdx-js/rollup':
       specifier: ^3.1.1
       version: 3.1.1
+    '@shikijs/rehype':
+      specifier: ^1.25.0
+      version: 1.29.2
     '@unocss/eslint-config':
       specifier: ^66.5.12
       version: 66.5.12
@@ -98,9 +101,6 @@ catalogs:
       specifier: ^3.0.9
       version: 3.2.4
   frontend:
-    '@shikijs/rehype':
-      specifier: ^1.25.0
-      version: 1.29.2
     '@unhead/react':
       specifier: ^2.1.1
       version: 2.1.1
@@ -155,9 +155,6 @@ importers:
 
   .:
     dependencies:
-      '@shikijs/rehype':
-        specifier: catalog:frontend
-        version: 1.29.2
       '@unhead/react':
         specifier: catalog:frontend
         version: 2.1.1(react@19.2.3)
@@ -204,6 +201,9 @@ importers:
       '@mdx-js/rollup':
         specifier: catalog:build
         version: 3.1.1(rollup@4.55.1)
+      '@shikijs/rehype':
+        specifier: catalog:build
+        version: 1.29.2
       '@types/js-yaml':
         specifier: catalog:types
         version: 4.0.9

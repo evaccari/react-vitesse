@@ -10,7 +10,7 @@ export default function AboutPage() {
   })
 
   return (
-    <div className="prose" m="auto" text="left">
+    <div className="prose-md prose dark:prose-invert" m="auto" text="left">
       <About />
     </div>
   )

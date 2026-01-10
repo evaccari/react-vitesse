@@ -4,9 +4,10 @@ import { hydrateRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 import { router } from './router'
 import '~/modules/i18n'
+
 import '@unocss/reset/tailwind.css'
-import './styles/main.css'
 import 'uno.css'
+import './styles/main.css'
 
 const head = createHead()
 

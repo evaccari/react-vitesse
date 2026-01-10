@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { i18n, supportedLanguages } from '~/modules/i18n'
+import { useDarkStore } from '~/stores/dark'
 
 async function toggleLanguages() {
   const newIndex = (supportedLanguages.indexOf(i18n.language) + 1) % supportedLanguages.length
@@ -8,12 +9,11 @@ async function toggleLanguages() {
   i18n.changeLanguage(newLanguage)
 }
 
-function toggleDark() {
-  //
-}
-
 export default function Footer() {
   const { t } = useTranslation()
+
+  const darkStore = useDarkStore
+  const toggleDark = darkStore.getState().toggleDark
 
   return (
     <nav flex="~ gap-4" justify="center" m="t-6" text="xl">

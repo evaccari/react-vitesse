@@ -1,10 +1,13 @@
 import { useHead } from '@unhead/react'
 import { Outlet } from 'react-router-dom'
 import RouteProgress from '~/components/RouteProgress'
+import { useDarkStore } from '~/stores/dark'
 
 export default function App() {
+  const isDark = useDarkStore(s => s.isDark)
+  const preferredDark = useDarkStore(s => s.preferredDark)
+
   useHead({
-    title: 'React Vitesse',
     meta: [
       {
         name: 'description',
@@ -12,14 +15,15 @@ export default function App() {
       },
       {
         name: 'theme-color',
-        content: '#ffffff',
+        content: isDark ? '#00aba9' : '#ffffff',
       },
     ],
     link: [
       {
         rel: 'icon',
         type: 'image/svg+xml',
-        href: '/favicon.svg',
+        href: preferredDark ? '/favicon-dark.svg' : '/favicon.svg',
+        key: 'favicon',
       },
     ],
   })
