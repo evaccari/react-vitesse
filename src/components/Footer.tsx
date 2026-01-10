@@ -13,7 +13,7 @@ export default function Footer() {
   const { t } = useTranslation()
 
   const darkStore = useDarkStore
-  const toggleDark = darkStore.getState().toggleDark
+  const { toggleDark } = darkStore.getState()
 
   return (
     <nav flex="~ gap-4" justify="center" m="t-6" text="xl">
