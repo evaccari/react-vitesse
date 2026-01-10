@@ -16,11 +16,13 @@ export default defineConfig({
   },
 
   plugins: [
+    // https://github.com/mdx-js/mdx
     {
       enforce: 'pre',
       ...mdx({
         rehypePlugins: [
           [
+            // https://github.com/shikijs/shiki
             rehypeShiki,
             {
               defaultColor: false,
@@ -34,6 +36,7 @@ export default defineConfig({
       }),
     },
 
+    // https://github.com/vitejs/vite-plugin-react
     react({ include: /\.(mdx|js|jsx|ts|tsx)$/ }),
 
     // https://github.com/antfu/unocss
@@ -71,10 +74,10 @@ export default defineConfig({
   ],
 
   // https://github.com/vitest-dev/vitest
-  // test: {
-  // include: ['test/**/*.test.ts'],
-  // environment: 'jsdom',
-  // },
+  test: {
+    include: ['test/**/*.test.{ts,tsx}'],
+    environment: 'jsdom',
+  },
 
   // https://github.com/antfu/vite-ssg
   /* ssgOptions: {

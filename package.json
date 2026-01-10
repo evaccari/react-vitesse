@@ -35,6 +35,7 @@
     "@iconify-json/carbon": "catalog:dev",
     "@mdx-js/rollup": "catalog:build",
     "@shikijs/rehype": "catalog:build",
+    "@testing-library/react": "catalog:dev",
     "@types/js-yaml": "catalog:types",
     "@types/mdx": "catalog:types",
     "@types/nprogress": "catalog:types",
