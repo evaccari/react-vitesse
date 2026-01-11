@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "pnpm@10.28.0",
   "scripts": {
-    "build": "vite-ssg build",
+    "build": "vite build",
     "dev": "vite --port 3333 --open",
     "lint": "eslint .",
     "preview": "vite preview",
@@ -17,6 +17,7 @@
     "sizecheck": "npx vite-bundle-visualizer"
   },
   "dependencies": {
+    "@tanstack/react-router": "catalog:frontend",
     "@unhead/react": "catalog:frontend",
     "@unocss/reset": "catalog:frontend",
     "i18next": "catalog:frontend",
@@ -26,7 +27,6 @@
     "react": "catalog:frontend",
     "react-dom": "catalog:frontend",
     "react-i18next": "catalog:frontend",
-    "react-router-dom": "catalog:frontend",
     "zustand": "catalog:frontend"
   },
   "devDependencies": {
@@ -35,6 +35,7 @@
     "@iconify-json/carbon": "catalog:dev",
     "@mdx-js/rollup": "catalog:build",
     "@shikijs/rehype": "catalog:build",
+    "@tanstack/router-plugin": "catalog:build",
     "@testing-library/react": "catalog:dev",
     "@types/js-yaml": "catalog:types",
     "@types/mdx": "catalog:types",
@@ -63,9 +64,6 @@
     "vite": "catalog:build",
     "vite-bundle-visualizer": "catalog:build",
     "vite-plugin-inspect": "catalog:build",
-    "vite-plugin-pwa": "catalog:build",
-    "vite-ssg": "catalog:build",
-    "vite-ssg-sitemap": "catalog:build",
     "vitest": "catalog:dev"
   },
   "simple-git-hooks": {

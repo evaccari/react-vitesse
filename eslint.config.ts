@@ -7,4 +7,7 @@ export default antfu(
     pnpm: true,
     react: true,
   },
+  {
+    ignores: ['./src/routeTree.gen.ts'],
+  },
 )

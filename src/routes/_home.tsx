@@ -1,7 +1,11 @@
-import { Outlet } from '@tanstack/react-router'
+import { createFileRoute, Outlet } from '@tanstack/react-router'
 import Footer from '~/components/Footer'
 
-export default function HomeLayout() {
+export const Route = createFileRoute('/_home')({
+  component: HomeLayout,
+})
+
+function HomeLayout() {
   return (
     <main p="x-4 y-10" text="center gray-700 dark:gray-200">
       <Outlet />

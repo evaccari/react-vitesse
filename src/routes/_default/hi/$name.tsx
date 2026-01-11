@@ -1,16 +1,16 @@
+import { createFileRoute, Link, useParams, useRouter } from '@tanstack/react-router'
 import { useHead } from '@unhead/react'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useUserStore } from '~/stores/user'
 
-interface HiRouteParams extends Record<string, string> {
-  name: string
-}
+export const Route = createFileRoute('/_default/hi/$name')({
+  component: HiPage,
+})
 
-export default function HiPage() {
-  const navigate = useNavigate()
-  const { name } = useParams<HiRouteParams>()
+function HiPage() {
+  const router = useRouter()
+  const { name } = useParams({ from: '/_default/hi/$name' })
   const { t } = useTranslation()
 
   const { setNewName } = useUserStore.getState()
@@ -63,7 +63,7 @@ export default function HiPage() {
       )}
 
       <div>
-        <button className="btn" m="3 t-6" text="sm" onClick={() => navigate(-1)}>
+        <button className="btn" m="3 t-6" text="sm" onClick={() => router.history.back()}>
           {t('button.back')}
         </button>
       </div>

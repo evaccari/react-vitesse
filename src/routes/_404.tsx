@@ -1,8 +1,12 @@
-import { Outlet, useRouter } from '@tanstack/react-router'
+import { createFileRoute, Outlet, useRouter } from '@tanstack/react-router'
 import { useHead } from '@unhead/react'
 import { useTranslation } from 'react-i18next'
 
-export default function NotFoundLayout() {
+export const Route = createFileRoute('/_404')({
+  component: NotFoundLayout,
+})
+
+function NotFoundLayout() {
   const router = useRouter()
   const { t } = useTranslation()
 

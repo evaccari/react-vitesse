@@ -1,11 +1,15 @@
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { useHead } from '@unhead/react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
 import Input from '~/components/Input'
 import { useUserStore } from '~/stores/user'
 
-export default function HomePage() {
+export const Route = createFileRoute('/_home/')({
+  component: HomePage,
+})
+
+function HomePage() {
   const navigate = useNavigate()
   const { t } = useTranslation()
 
@@ -13,7 +17,7 @@ export default function HomePage() {
 
   function go() {
     if (name)
-      navigate(`hi/${encodeURIComponent(name)}`)
+      navigate({ to: `hi/${encodeURIComponent(name)}` })
   }
 
   useHead({

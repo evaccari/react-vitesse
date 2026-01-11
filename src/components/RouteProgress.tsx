@@ -1,35 +1,18 @@
+import { useRouterState } from '@tanstack/react-router'
 import NProgress from 'nprogress'
-import { useEffect, useRef } from 'react'
-import { useLocation, useNavigation } from 'react-router-dom'
+import { useEffect } from 'react'
 
 export default function RouteProgress() {
-  const location = useLocation()
-  const navigation = useNavigation()
-  const previousPath = useRef(location.pathname)
-  const timer = useRef<number | null>(null)
+  const isLoading = useRouterState({ select: state => state.isLoading })
 
   useEffect(() => {
-    const isNewRoute = previousPath.current !== location.pathname
-    previousPath.current = location.pathname
-
-    if (isNewRoute || navigation.state === 'loading') {
+    if (isLoading) {
       NProgress.start()
-
-      if (navigation.state === 'idle') {
-        timer.current = window.setTimeout(() => NProgress.done(), 150)
-      }
     }
-
-    if (navigation.state === 'idle') {
-      timer.current = window.setTimeout(() => NProgress.done(), 100)
+    else {
+      NProgress.done()
     }
-
-    return () => {
-      if (timer.current) {
-        clearTimeout(timer.current)
-      }
-    }
-  }, [location.pathname, navigation.state])
+  }, [isLoading])
 
   return null
 }

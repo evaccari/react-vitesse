@@ -1,9 +1,13 @@
+import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { useHead } from '@unhead/react'
-import { Outlet } from 'react-router-dom'
 import RouteProgress from '~/components/RouteProgress'
 import { useDarkStore } from '~/stores/dark'
 
-export default function App() {
+export const Route = createRootRoute({
+  component: App,
+})
+
+function App() {
   const isDark = useDarkStore(s => s.isDark)
   const preferredDark = useDarkStore(s => s.preferredDark)
 
