@@ -10,11 +10,11 @@ Check out [`@tanstack/react-router`](https://github.com/TanStack/router) for mor
 For example, instead of having
 
 ```ts
-import { isDark } from '../../../../composables'
+import Footer from '../../../../components'
 ```
 
 now, you can use
 
 ```ts
-import { isDark } from '~/composables'
+import Footer from '~/components'
 ```
