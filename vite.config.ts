@@ -36,6 +36,7 @@ export default defineConfig({
       }),
     },
 
+    // https://github.com/tanstack/router
     tanstackRouter({
       autoCodeSplitting: true,
       target: 'react',
@@ -49,14 +50,14 @@ export default defineConfig({
     Unocss(),
 
     // https://github.com/sapphi-red/vite-plugin-static-copy
-    viteStaticCopy({
+    (viteStaticCopy({
       targets: [
         {
           dest: '.',
           src: 'locales',
         },
       ],
-    }),
+    })),
   ],
 
   // https://github.com/vitest-dev/vitest
