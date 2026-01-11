@@ -5,6 +5,7 @@ import { tanstackRouter } from '@tanstack/router-plugin/vite'
 import react from '@vitejs/plugin-react'
 import Unocss from 'unocss/vite'
 import { defineConfig } from 'vite'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 import 'vitest/config'
 
 export default defineConfig({
@@ -46,6 +47,16 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
     Unocss(),
+
+    // https://github.com/sapphi-red/vite-plugin-static-copy
+    viteStaticCopy({
+      targets: [
+        {
+          dest: '.',
+          src: 'locales',
+        },
+      ],
+    }),
   ],
 
   // https://github.com/vitest-dev/vitest
