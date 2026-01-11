@@ -18,7 +18,7 @@ context('Basic', () => {
     cy.contains('[Default Layout]')
       .should('exist')
 
-    cy.get('[btn]')
+    cy.get('.btn')
       .click()
       .url()
       .should('eq', 'http://localhost:3333/')
