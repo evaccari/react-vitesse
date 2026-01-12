@@ -17,7 +17,7 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v6
         with:
-          node-version: lts/*
+          node-version-file: .node-version
           cache: pnpm
 
       - name: Install
@@ -33,7 +33,7 @@ jobs:
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v6
         with:
-          node-version: lts/*
+          node-version-file: .node-version
           cache: pnpm
 
       - name: Install
@@ -47,17 +47,15 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
         os: [ubuntu-latest]
       fail-fast: false
 
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version-file: .node-version
           registry-url: https://registry.npmjs.org/
           cache: pnpm
 
@@ -74,12 +72,12 @@ jobs:
             ~/.cache
           key: cypress-cache-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
 
-      - uses: pnpm/action-setup@v3
+      - uses: pnpm/action-setup@v4
 
       - name: Use Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: lts/*
+          node-version-file: .node-version
           registry-url: https://registry.npmjs.org/
           cache: pnpm
 
